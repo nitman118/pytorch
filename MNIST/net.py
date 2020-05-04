@@ -114,7 +114,7 @@ def get_all_preds(model, loader):
         all_preds = torch.cat((all_preds, preds), dim=0)
     return all_preds
 
-
+net.to('cpu')
 
 with torch.no_grad(): #you could also decorate the function @torch.no_grad()
     prediction_loader = torch.utils.data.DataLoader(train_set, batch_size = 10000)
